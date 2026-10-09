@@ -1,8 +1,8 @@
 {
   "name": "play-store-aso-competitor-intelligence",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Google Play Store ASO & Competitor Intelligence Studio",
-  "description": "Autonomous Google Play Store ASO competitor scraping, gap analysis, and conversion engineering studio. Ingests target and competitor package IDs, extracts live store metadata, performs head-to-head keyword and feature gap audits, generates policy-compliant metadata, drafts corridor Custom Store Listings (CSL), and exports executive .docx reports directly to the user's Downloads folder.",
+  "description": "Autonomous Google Play Store ASO competitor scraping, gap analysis, and conversion engineering studio. Ingests target and competitor package IDs, extracts live store metadata, performs head-to-head keyword and feature gap audits, generates policy-compliant metadata, drafts corridor Custom Store Listings (CSL), synthesizes 4-Pillar Growth Playbooks, and exports executive .docx & markdown audit artifacts directly to the user's Downloads folder.",
   "author": "Antigravity Agentic Studio",
   "status": "installed",
   "error": null,
@@ -20,7 +20,7 @@
     {
       "name": "audit-competitor",
       "description": "Execute head-to-head comparative ASO gap audit between target app and competitor",
-      "args": ["--target", "--competitor", "--export-docx", "--output-json"]
+      "args": ["--target", "--competitor", "--export-docx", "--output-json", "--generate-artifact"]
     },
     {
       "name": "scrape-app",
@@ -31,6 +31,11 @@
       "name": "export-docx",
       "description": "Compile comparative ASO matrix, vulnerability analysis, and takeover blueprint into styled executive Word document",
       "args": ["--target", "--competitor", "--dest"]
+    },
+    {
+      "name": "generate-artifact",
+      "description": "Generate structured markdown audit artifact defining user input parameters and takeover blueprint",
+      "args": ["--target", "--competitor", "--generate-artifact"]
     }
   ],
   "dependencies": {
@@ -49,7 +54,8 @@
     "Prohibited Superlatives Policy: Metadata must omit all banned claims ('Best', 'Free', 'Top', '#1', 'No.1').",
     "Head-to-Head Gap Audit: Every competitive analysis must contrast keyword counts, install velocities, ratings, and feature differentiators.",
     "Corridor CSL Invariant: High-volume international diaspora corridors (KSA, UAE, Qatar) must receive dedicated Custom Store Listings.",
-    "Executive Word Delivery: Every full audit must compile and export an executive .docx report to the user's Downloads directory."
+    "Executive Word Delivery: Every full audit must compile and export an executive .docx report to the user's Downloads directory.",
+    "Growth Playbook Invariant: Every audit must synthesize the 4-Pillar Organic & Viral Growth Playbook."
   ],
   "invariants": [
     "title_boundary_lte_30_chars",
@@ -67,6 +73,9 @@
     "policy_gate_auditing",
     "corridor_csl_synthesis",
     "visual_cro_storyboard_scaffolding",
+    "growth_playbook_synthesis",
+    "audit_artifact_generation",
+    "expat_lifecycle_retention_modeling",
     "executive_docx_report_export"
   ]
 }
