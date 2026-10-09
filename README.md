@@ -51,12 +51,22 @@
 
 ## 🚀 Quick Start
 
-### 1. Prerequisites
+### 1. Prerequisites & Environment Setup
 * Python 3.9+
 * Required packages:
   ```bash
   pip install python-docx
   ```
+* **Environment Configuration (`.env`)**:
+  Copy the provided `.env.example` to `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+  Fill in your specific API keys and Google Cloud Project identifiers:
+  * `GEMINI_API_KEY`: Used for search grounding and semantic intent research.
+  * `GOOGLE_CLOUD_PROJECT`: Your GCP project ID (for Vertex AI and Application Default Credentials).
+  * `CLOUD_NATURAL_LANGUAGE_API_KEY`: For competitor review sentiment & entity salience audits.
+  * `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON`: (Optional) For automated Play Console deployments.
 
 ### 2. End-to-End Competitor Audit & .docx Export
 Run the full comparative audit between your target app and a competitor:
