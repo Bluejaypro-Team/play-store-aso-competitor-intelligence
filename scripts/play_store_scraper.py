@@ -66,7 +66,18 @@ def _rate_limited_request(url: str, retries: int = 3) -> str:
             
     return ""
 
+def extract_package_id(input_str: str) -> str:
+    input_str = input_str.strip()
+    if "id=" in input_str:
+        m = re.search(r"id=([a-zA-Z0-9_\.]+)", input_str)
+        if m:
+            return m.group(1)
+    if "/" in input_str:
+        input_str = input_str.rstrip("/").split("/")[-1]
+    return input_str
+
 def scrape_play_store_app(package_id: str) -> dict:
+    package_id = extract_package_id(package_id)
     url = f"https://play.google.com/store/apps/details?id={package_id}&hl=en&gl=US"
     html_content = _rate_limited_request(url)
     

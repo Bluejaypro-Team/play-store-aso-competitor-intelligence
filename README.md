@@ -68,26 +68,35 @@
   * `CLOUD_NATURAL_LANGUAGE_API_KEY`: For competitor review sentiment & entity salience audits.
   * `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON`: (Optional) For automated Play Console deployments.
 
-### 2. End-to-End Competitor Audit & .docx Export
-Run the full comparative audit between your target app and a competitor:
+### 2. End-to-End Competitor Audit & .docx Export (100% Autonomous for ANY App)
+Run the full comparative audit for **any Android app** and **any competitor** in any category (Finance, Health, Utilities, Education, E-Commerce, Gaming):
+
+You can pass either **raw Package IDs** or **full Play Store URLs**:
 
 ```bash
+# Example A: Using Package IDs (Any Category)
 python scripts/aso_competitor_orchestrator.py \
-  --target "com.probashi.taka" \
-  --competitor "com.jameel.bdttakarrate" \
+  --target "<YOUR_TARGET_PACKAGE_ID>" \
+  --competitor "<COMPETITOR_PACKAGE_ID>" \
+  --export-docx
+
+# Example B: Using Direct Google Play Web URLs
+python scripts/aso_competitor_orchestrator.py \
+  --target "https://play.google.com/store/apps/details?id=<YOUR_APP_ID>" \
+  --competitor "https://play.google.com/store/apps/details?id=<COMPETITOR_APP_ID>" \
   --export-docx
 ```
 
-The script will:
-1. Scrape live metadata for both apps.
-2. Calculate title character utilization and keyword gaps.
-3. Generate the 5-phase takeover strategy.
-4. Save the executive Word report directly to `C:\Users\User\Downloads\<target_app>_ASO_Competitor_Intelligence.docx`.
+The orchestrator will autonomously:
+1. **Scrape live metadata** for both applications (Title, Developer, Installs, Ratings, Reviews, Descriptions, Screenshots) with built-in rate-limiting.
+2. **Execute Head-to-Head Gap Analysis**: Measures title character headroom ($\le 30$ chars), detects missing semantic keywords, and analyzes rating disparities.
+3. **Formulate Takeover Strategy**: Synthesizes a policy-compliant 30-char Title, 80-char Short Description, and Android Vitals targets.
+4. **Compile Executive Word Report**: Saves the complete audit directly to `C:\Users\User\Downloads\<target_app>_ASO_Takeover_Report.docx`.
 
 ### 3. Standalone App Scraping
-To inspect any app on Google Play:
+To inspect any individual app on Google Play:
 ```bash
-python scripts/play_store_scraper.py --package "com.probashi.taka" --output "app_metadata.json"
+python scripts/play_store_scraper.py --package "<PACKAGE_ID_OR_PLAY_STORE_URL>" --output "app_metadata.json"
 ```
 
 ---
