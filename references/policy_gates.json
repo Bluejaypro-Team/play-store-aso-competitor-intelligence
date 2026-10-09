@@ -1,0 +1,33 @@
+{
+  "limits": {
+    "title_max_chars": 30,
+    "short_description_max_chars": 80,
+    "long_description_max_chars": 4000,
+    "target_ngram_density_min_pct": 2.0,
+    "target_ngram_density_max_pct": 2.5
+  },
+  "banned_superlatives": [
+    "best",
+    "free",
+    "top",
+    "#1",
+    "no 1",
+    "no. 1",
+    "no.1",
+    "download now",
+    "rank 1"
+  ],
+  "android_vitals_thresholds": {
+    "user_perceived_crash_rate_max_pct": 1.09,
+    "user_perceived_anr_rate_max_pct": 0.47,
+    "target_crash_rate_pct": 0.50,
+    "target_anr_rate_pct": 0.20,
+    "cold_launch_latency_max_sec": 1.5
+  },
+  "cro_standards": {
+    "app_icon_dimensions": "512x512 PNG 32-bit",
+    "feature_graphic_dimensions": "1024x500 JPG or PNG",
+    "storyboard_screen_count": 5,
+    "typography_top_boundary_pct": 30
+  }
+}

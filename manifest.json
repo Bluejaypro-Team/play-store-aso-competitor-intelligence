@@ -1,0 +1,72 @@
+{
+  "name": "play-store-aso-competitor-intelligence",
+  "version": "1.0.0",
+  "displayName": "Google Play Store ASO & Competitor Intelligence Studio",
+  "description": "Autonomous Google Play Store ASO competitor scraping, gap analysis, and conversion engineering studio. Ingests target and competitor package IDs, extracts live store metadata, performs head-to-head keyword and feature gap audits, generates policy-compliant metadata, drafts corridor Custom Store Listings (CSL), and exports executive .docx reports directly to the user's Downloads folder.",
+  "author": "Antigravity Agentic Studio",
+  "status": "installed",
+  "error": null,
+  "quota_project": "tidal-mode-490503-i9",
+  "entrypoint": "scripts/aso_competitor_orchestrator.py",
+  "address_points": {
+    "specification": "C:/Users/User/.gemini/config/skills/play-store-aso-competitor-intelligence/SKILL.md",
+    "manifest": "C:/Users/User/.gemini/config/skills/play-store-aso-competitor-intelligence/manifest.json",
+    "orchestrator": "C:/Users/User/.gemini/config/skills/play-store-aso-competitor-intelligence/scripts/aso_competitor_orchestrator.py",
+    "scraper": "C:/Users/User/.gemini/config/skills/play-store-aso-competitor-intelligence/scripts/play_store_scraper.py",
+    "policy_gates": "C:/Users/User/.gemini/config/skills/play-store-aso-competitor-intelligence/references/policy_gates.json",
+    "global_rules": "C:/Users/User/.gemini/config/rules/play_store_aso_optimization_rules.md"
+  },
+  "commands": [
+    {
+      "name": "audit-competitor",
+      "description": "Execute head-to-head comparative ASO gap audit between target app and competitor",
+      "args": ["--target", "--competitor", "--export-docx", "--output-json"]
+    },
+    {
+      "name": "scrape-app",
+      "description": "Scrape live public metadata from Google Play Store web listing with 1 req/sec rate limit",
+      "args": ["--package", "--output"]
+    },
+    {
+      "name": "export-docx",
+      "description": "Compile comparative ASO matrix, vulnerability analysis, and takeover blueprint into styled executive Word document",
+      "args": ["--target", "--competitor", "--dest"]
+    }
+  ],
+  "dependencies": {
+    "skills": [
+      "play-store-aso-optimizer",
+      "grounded-search-intent-architect",
+      "prompt-vault-clipboard-manager"
+    ],
+    "python": [
+      "python-docx>=1.1.0"
+    ]
+  },
+  "rules": [
+    "Strict Title Limit: Title must never exceed 30 characters and must fuse brand name with root search query.",
+    "Strict Short Description Limit: Short description must never exceed 80 characters.",
+    "Prohibited Superlatives Policy: Metadata must omit all banned claims ('Best', 'Free', 'Top', '#1', 'No.1').",
+    "Head-to-Head Gap Audit: Every competitive analysis must contrast keyword counts, install velocities, ratings, and feature differentiators.",
+    "Corridor CSL Invariant: High-volume international diaspora corridors (KSA, UAE, Qatar) must receive dedicated Custom Store Listings.",
+    "Executive Word Delivery: Every full audit must compile and export an executive .docx report to the user's Downloads directory."
+  ],
+  "invariants": [
+    "title_boundary_lte_30_chars",
+    "short_description_lte_80_chars",
+    "long_description_lte_4000_chars",
+    "banned_superlatives_zero_tolerance",
+    "natural_ngram_density_2_to_2_5_pct",
+    "visual_cro_top_30_pct_typography",
+    "android_vitals_crash_lte_1_09_pct",
+    "android_vitals_anr_lte_0_47_pct"
+  ],
+  "capabilities": [
+    "play_store_metadata_scraping",
+    "competitor_gap_analysis",
+    "policy_gate_auditing",
+    "corridor_csl_synthesis",
+    "visual_cro_storyboard_scaffolding",
+    "executive_docx_report_export"
+  ]
+}
